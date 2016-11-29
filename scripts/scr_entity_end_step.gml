@@ -47,10 +47,15 @@ if (has_physics)
     
     // test collisions
     scr_entity_check_collision_with_solids();
+    scr_entity_check_collision_with_platforms();
     
-    if (last_velocity_y > 0 && entity_hit_solid_y)
+    grounded = false;
+    if (last_velocity_y > 0)
     {
-        grounded = true;
+        if (entity_hit_solid_y || entity_hit_platform_y)
+        {
+            grounded = true;
+        }
     }
     
     // update position
