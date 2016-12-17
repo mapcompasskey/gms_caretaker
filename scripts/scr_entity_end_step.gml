@@ -45,18 +45,8 @@ if (has_physics)
     last_velocity_x = mx;
     last_velocity_y = my;
     
-    // test collisions
-    scr_entity_check_collision_with_solids();
-    scr_entity_check_collision_with_platforms();
-    
-    grounded = false;
-    if (last_velocity_y > 0)
-    {
-        if (entity_hit_solid_y || entity_hit_platform_y)
-        {
-            grounded = true;
-        }
-    }
+    // movement collision tests
+    script_execute(movement_collision_script);
     
     // update position
     x += mx;

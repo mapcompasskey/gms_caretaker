@@ -11,6 +11,7 @@
     <sprite>sprites\spr_npc_idle</sprite>
     <sprite>sprites\spr_npc_mask</sprite>
     <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_npc_wall</sprite>
     <sprite>sprites\spr_platform_1</sprite>
     <sprite>sprites\spr_platform_2</sprite>
   </sprites>
@@ -27,12 +28,18 @@
       </scripts>
       <scripts name="Entities">
         <scripts name="Entity">
+          <scripts name="Collision">
+            <script>scripts\scr_entity_movement_collision.gml</script>
+            <script>scripts\scr_entity_check_collision_with_solids.gml</script>
+            <script>scripts\scr_entity_check_collision_with_platforms.gml</script>
+            <script>scripts\scr_entity_check_collision_with_npc_walls.gml</script>
+            <script>scripts\scr_entity_test_movement_collision.gml</script>
+            <script>scripts\scr_entity_check_edge_of_solids.gml</script>
+            <script>scripts\scr_entity_check_edge_of_platforms.gml</script>
+          </scripts>
           <script>scripts\scr_entity_create.gml</script>
           <script>scripts\scr_entity_step.gml</script>
           <script>scripts\scr_entity_end_step.gml</script>
-          <script>scripts\scr_entity_check_collision_with_solids.gml</script>
-          <script>scripts\scr_entity_check_collision_with_platforms.gml</script>
-          <script>scripts\scr_entity_test_movement_collision.gml</script>
           <script>scripts\scr_entity_draw.gml</script>
         </scripts>
         <scripts name="Player">
@@ -44,6 +51,7 @@
         <scripts name="NPC">
           <script>scripts\scr_npc_create.gml</script>
           <script>scripts\scr_npc_step.gml</script>
+          <script>scripts\scr_npc_movement_collision.gml</script>
           <script>scripts\scr_npc_draw.gml</script>
         </scripts>
       </scripts>
@@ -68,6 +76,7 @@
     <objects name="Solids">
       <object>objects\obj_solid</object>
       <object>objects\obj_wall</object>
+      <object>objects\obj_npc_wall</object>
       <object>objects\obj_platform_1</object>
       <object>objects\obj_platform_2</object>
     </objects>

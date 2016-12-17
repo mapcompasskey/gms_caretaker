@@ -29,6 +29,12 @@ jump_bounce_min = 0;   // 1   - if less than 1
 entity_hit_solid_x = false;
 entity_hit_solid_y = false;
 entity_hit_platform_y = false;
+entity_hit_npc_wall_x = false;
+entity_hit_npc_wall_x = false;
+entity_at_edge_of_solid = false;
+entity_at_edge_of_platform = false;
+
+movement_collision_script = scr_entity_movement_collision;
 
 // states
 grounded = false;
